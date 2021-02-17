@@ -67,7 +67,7 @@ class Profile extends Component{
             <div class="profilecard">
             
             <img alt={this.props.userObj.username} style={{ maxWidth: "70vw", maxHeight: "20vh" }}src={this.props.userObj.avatar}></img>
-            <h1>{this.props.userObj.username}</h1>
+            <h1>{this.props.userObj.first_name}</h1>
             <p class="title">CEO & Founder</p>
             <p><button class="profilebutton">Contact</button></p>
 
@@ -76,7 +76,7 @@ class Profile extends Component{
 
                 this.props.userObj.friends? 
                 <>
-                Number of Homies: {this.props.userObj.friends.length}
+                {/* Number of Homies: {this.props.userObj.friends.length} */}
                 </>
                 :
                 <>
@@ -93,7 +93,7 @@ class Profile extends Component{
                 </>
                 :
                 <>
-                <h5>Vaccinated: Naahhh</h5>
+                <h5>Email: victor@email.com</h5>
 
                 </>
 
@@ -106,8 +106,9 @@ class Profile extends Component{
             {this.props.userObj.friends? 
             <>
 
-            <h5> How old is you: {this.props.userObj.age}</h5>
+            <h5> Age: {this.props.userObj.age}</h5>
             <h5> Location: {this.props.userObj.hometown}</h5>
+            <h5> Username: {this.props.userObj.username}</h5>
 
             </>
             :

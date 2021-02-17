@@ -2,6 +2,8 @@ import React, {Component} from 'react'
  import {connect} from 'react-redux'
 //  import {Link,Redirect} from 'react-router-dom'
  import EditComment from './EditComment'
+import styleFeedback from '../Styling/styleFeedback.scss'
+
 
 
 class Comment extends Component{
@@ -67,26 +69,19 @@ class Comment extends Component{
      
 
         return(
-            <div>
-                <div>
-            {/* <h2>SITUATION : {this.props.commentObj.post.content}</h2> */}
-
-                </div>
-
+            <div class="commentArea div3FComments">
             <>
-            <h3>ADVICE FROM THE WORLD{this.props.commentObj.post.content}</h3>
-            <h4>User: {this.props.commentObj.user.username}</h4>
-            <h4>Advie: {this.props.commentObj.comment}</h4>
+
+            <h4>Predicament: {this.props.commentObj.post.content}</h4>
+            {/* <h4>User: {this.props.commentObj.user.username}</h4> */}
+            <h4>Advice: {this.props.commentObj.comment}</h4>
             {this.props.commentObj.con ===true  ? "CON ⛔️" 
             : this.props.commentObj.pro ===true ? "PRO ✅" 
             : "NeUtRuAl"}
             {this.deleteComment()}
             <button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit "}</button>
             {this.editUserComment()}
-            {this.checkCOM()}
-            <div>
-
-            </div>
+            {/* {this.checkCOM()} */}
 
             </> 
 

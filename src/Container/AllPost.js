@@ -71,7 +71,7 @@ class AllPost extends Component {
                 <>
                 
                 {/* < FilterPost  /> */}
-                <button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Prefer to keep it to yourself ?": "Ask The World"}</button>
+                <button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Changed your mind?": "Ask The World"}</button>
                 {/* {this.renderPosts()} */}
                  {this.renderPostForm()}
                 {this.newRenderPosts()}
@@ -82,7 +82,7 @@ class AllPost extends Component {
                 :
 
                 <>
-                <h1>not logged in</h1>
+                <h1>Goodbye, We hope you were able to choose between This or That </h1>
 
                 </>        
                 }

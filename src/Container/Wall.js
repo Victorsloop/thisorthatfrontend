@@ -70,7 +70,7 @@ class Wall extends Component {
                 <>
                 
                 {/* < FilterPost  /> */}
-                <button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Dont feel like Posting": "Show The World"}</button>
+                <button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Dont feel like Asking": "Show The World"}</button>
                  {this.renderPostForm()}
                 {this.newRenderPosts()}
                 
@@ -81,7 +81,7 @@ class Wall extends Component {
                 :
 
                 <>
-                <h1>not logged in</h1>
+             <h1>Goodbye, We hope you were able to choose between This or That </h1>
 
                 </>        
                 }

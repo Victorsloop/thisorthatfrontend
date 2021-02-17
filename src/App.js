@@ -13,10 +13,7 @@ import { loginUser, signupUser, returningUser} from './Redux/actions'
 import { connect } from 'react-redux'
 import EditPost from './Components/EditPost';
 import FinalHeader from './Components/FinalHeader';
-// import './Styling/WelcomeStyling.scss'
-
-// import PostStyling from './Styling/PostStyling'
-// import Navbar from './Components/Navbar'
+import FlipCoin from './Components/FlipCoin';
 
 class App extends React.Component{
   state = {
@@ -125,6 +122,7 @@ class App extends React.Component{
           < Route path="/allPost" render={() => <AllPost user={this.state.user} postID={this.state.postID}/>}/>
           < Route path="/editPost" render={() => <EditPost user={this.state.user}/>}/>
           < Route path="/profile" render={() => <Profile user={this.state.user} />}/>
+          < Route path="/fate" render={() => <FlipCoin user={this.state.user} />}/>
           < Route path="/feedback" render={() => <Feedback user={this.state.user} postID={this.state.postID} updatePostId={this.updatePostId}/>}/>
           < Route path="/signup" render={() => <Signup submitHandler={this.reduxSignupSubmitHandler}/>}/>
           < Route path="/login" render={() => <Login submitHandler={this.reduxSigninSubmitHandler} />}/>

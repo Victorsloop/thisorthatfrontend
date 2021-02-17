@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 
 import '../App.scss'
+import styleFeedback from '../Styling/styleFeedback.scss'
 import CommentForm from '../Components/CommentForm'
 import Comment from '../Components/Comment'
 import { fetchComments } from '../Redux/actions'
@@ -87,10 +88,10 @@ class Feedback extends Component {
             <>
             {localStorage.token ? 
             <>
-            <div>
+            <div class=".div1FHeader">
             <h1> WILL it be This or That ?!?!?!?</h1>
             <img alt="This or that" className="center" style={{ maxWidth: "40vw", maxHeight: "40vh" }}src={"https://i.gifer.com/LHDQ.gif"}></img>
-            <h2>The indecisive Situation {this.props.postObj.content}</h2>
+            <h4>The indecisive Situation {this.props.postObj.content}</h4>
             <CommentForm userObj={this.props.userObj} postObj={this.props.postObj} postID={this.props.postID} rerender={this.renderComments} updatePostId={this.props.updatePostId}/>
             {/* {this.checkuser()} */}
             

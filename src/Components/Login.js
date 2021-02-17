@@ -1,13 +1,14 @@
 import React from 'react'
 import './Stylesheet.css' 
-// import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 class Login extends React.Component{
 
     state = {
         username:"",
-        password:""
+        password:"",
+        hasBeenClicked:false 
     }
 
     inputHandler = (e) => {
@@ -17,7 +18,14 @@ class Login extends React.Component{
     submitHandler = (e) => {
         e.preventDefault()
         this.props.submitHandler(this.state)
+        this.setState({hasBeenClicked: !this.state.hasBeenClicked})
     }
+
+    toWelcome = () => {
+        if(this.state.hasBeenClicked === true)
+        <Redirect to="/welcome"/>
+    }
+
     render(){
         return(
             <>
@@ -29,17 +37,20 @@ class Login extends React.Component{
             </div>
             :
             <div class="login-box">
-            <form onSubmit = {this.submitHandler}>
+            <form onSubmit = {this.submitHandler} >
             <div class="user-box">
              <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.inputHandler} /> 
             <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.inputHandler}/> 
             <input type="submit" value="Login"/>
             </div>
             </form>
+            {this.toWelcome()}
             </div>
+            
                    
             }
             </>
+            
 
         )
     }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
 import { addComments } from "../Redux/actions";
+import styleFeedback from '../Styling/styleFeedback.scss'
+
 
  class CommentForm extends Component {
     state = {
@@ -41,7 +43,8 @@ import { addComments } from "../Redux/actions";
         // console.log("current props in addPost component",this.props.userObj)
         return(
             <>
-            <h1> Here to help! 🌎</h1>
+            <div class=".commentForm">
+            <h2> Here to help! 🌎</h2>
             <form onSubmit={this.localAddComment}>
                 <input type="text" name="comment"placeholder="Advice" value={this.state.comment} onChange={this.newCommentHandler}/>
                 {/* <input type="text" name="name"placeholder={this.props.userObj.username} value={this.state.username} /> */}
@@ -51,12 +54,13 @@ import { addComments } from "../Redux/actions";
                 <label for="Pro">PRO✅</label>
                 <input type="checkbox" name="Con"placeholder="Con" value={this.state.con} onClick={this.checkCon}/>
                 <label for="Con">CON ⛔️</label>
-                <button class="button">Help! <div class="button__horizontal"></div><div class="button__vertical"></div></button>
+                <button class="button">Help ➤ <div class="button__horizontal"></div><div class="button__vertical"></div></button>
                 {/* <button onClick={this.checkProps}>CHECK</button> */}
                 
               
             
             </form>
+            </div>
             </>
         )
     }

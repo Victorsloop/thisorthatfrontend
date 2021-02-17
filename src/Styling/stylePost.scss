@@ -10,6 +10,7 @@
     overflow: scroll;
     box-shadow: 5px 10px #064f80;
     background-image: url("https://media1.giphy.com/media/dAWZiSMbMvObDWP3aA/giphy.gif");
+    flex-direction: row;
     // background-color: #0459da;
     // box-shadow: 5px 10px #39315f;
     // background-color: #5274b3;
@@ -19,4 +20,24 @@
       padding:1.2em;
       align-items:center;
 
+  }
+
+  .commentArea{
+    margin: 1.7em;
+    margin-top: 2em;
+    padding: .5rem!important;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    border-radius: .6rem!important;
+    border: 1px solid #dee2e6!important;
+    background-color: #f8f9fa!important;
+    flex: 1 1;
+    box-sizing: border-box;
+    display: block;
+    
+  }
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
   }

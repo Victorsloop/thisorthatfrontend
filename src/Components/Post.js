@@ -28,7 +28,7 @@ class Post extends Component{
     }
     editUserPost = () => {
         console.log("EDITING USER POSTS")
-        if(this.state.editClicked === true){
+        if(this.state.editClicked === true && this.props.user.id === this.props.postObj.user.id){
             return (< EditPost postObj={this.props.postObj} editClicked={this.editClicked} updatePage={this.props.updatePAGE} />)
         }
         
@@ -56,7 +56,7 @@ class Post extends Component{
             // history.push("/post")
             this.setState({ deleteClicked: !this.state.deleteClicked })
             this.forceUpdate()
-            // window.location.reload ()
+            window.location.reload ()
             // component.forceUpdate(callback)
             // this.props.rerender()
         })
@@ -84,8 +84,8 @@ class Post extends Component{
             <img alt={this.props.user.username} style={{ maxWidth: "70vw", maxHeight: "20vh" }}src={this.props.postObj.img_url} ></img>
              </Link>
             <div class="postcardCON">
-            <h4>Creator: {this.props.username}</h4> 
-            <h4>Situation: {this.props.postObj.content}</h4>
+            <h6>Creator: {this.props.username}</h6> 
+            <h6>Situation: {this.props.postObj.content}</h6>
             <button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit vent"}</button>
             {/* <button>DELETE</button> */}
             {/* <button onClick={this.postIdentification}>Help</button> */}

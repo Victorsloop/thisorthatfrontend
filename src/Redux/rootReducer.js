@@ -69,6 +69,8 @@ function commentReducer(prevState= defaultState.comments, action){
             case "ADD_COMMENTS":
                 console.log("IN Comment REDUCER Adding",[...prevState, action.payload])
                 return [...prevState, action.payload]
+                // return [action.payload, ...prevState]
+
             case "EDIT_COMMENTS":
                     console.log("IN Comment REDUCER EDITING", action)
                     // return prevState

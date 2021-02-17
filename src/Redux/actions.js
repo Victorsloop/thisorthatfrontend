@@ -204,7 +204,7 @@ export function editingPost(postId,postObj) {
 
                 // console.log('Success:', userData)
                 // history.push("/post")
-            // window.location.reload ()
+            window.location.reload ()
             
 
                 dispatch({ type: EDIT_POST, payload: newPostObj})

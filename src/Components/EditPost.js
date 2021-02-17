@@ -53,7 +53,7 @@ class EditPost extends React.Component {
             img_url: this.state.img_url,
         }
         this.props.editingPost(this.props.postObj.id,updatedPostObj)
-        this.props.updatePage()
+        // this.props.updatePage()
         this.props.editClicked()
     
     }

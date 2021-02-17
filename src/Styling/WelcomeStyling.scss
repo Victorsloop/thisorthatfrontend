@@ -1,0 +1,89 @@
+
+// $total: 200;
+// $time: 10s;
+
+// html, body, .wrap {
+// 	height: 100%;
+// }
+
+// body {
+// 	background: black;
+// 	background-image: radial-gradient(circle at center, white 0%, #222 10%, black 60%);
+// 	overflow: hidden;
+// }
+
+// .wrap {
+// 	transform-style: preserve-3d;
+// 	perspective: 800px;
+// }
+
+// .tri {
+// 	height: 0;
+// 	width: 0;
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 50%;
+// }
+
+// @for $i from 1 through $total {
+// 	$size: random(50) * 1px;
+// 	$rotate: random(360) * 1deg;
+// 	.tri:nth-child(#{$i}){
+// 		border-top: $size solid hsla(random(360), 100%, 50%, 1);
+// 		border-right: $size solid transparent;
+// 		border-left: $size solid transparent;
+// 		margin-left: -$size/2;
+// 		margin-top: -$size/2;
+// 		-webkit-filter: grayscale(1);
+// 		filter: grayscale(1);
+// 		transform: rotate($rotate) translate3d(0,0,-1500px) scale(0);
+// 		animation: anim#{$i} $time infinite linear;
+// 		animation-delay: $i * -($time/$total);
+// 		opacity: 0;
+// 	}
+	
+// 	@keyframes anim#{$i}{
+// 		0% {
+// 			opacity: 1;
+// 			transform: rotate($rotate * 1.5) translate3d(random(1000) * 1px, random(1000) * 1px,1000px) scale(1);
+// 		}
+// 	}
+// }
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+body {
+	font-family: "Montserrat", sans-serif;
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #7acdeb, #587971);
+	// background-image: url("https://i.pinimg.com/originals/4e/30/c9/4e30c95dc885f880a2c2797fdee0e042.gif");
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+* {
+	font-family: "Montserrat", sans-serif !important;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+// WelcomeImg
+.welcomeImg{
+	align-items: center;
+	
+}

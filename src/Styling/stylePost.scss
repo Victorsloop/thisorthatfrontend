@@ -1,0 +1,22 @@
+.postCard{
+    height: 300px;
+    width: 390px;
+    padding: 1.2em;
+    margin: 1.7em;
+    margin-top: 2em;
+    line-height: 1.7em;
+    border: 1px solid grey;
+    border-radius: 6px;
+    overflow: scroll;
+    box-shadow: 5px 10px #064f80;
+    background-image: url("https://media1.giphy.com/media/dAWZiSMbMvObDWP3aA/giphy.gif");
+    // background-color: #0459da;
+    // box-shadow: 5px 10px #39315f;
+    // background-color: #5274b3;
+  }
+
+  .addpostbutton{
+      padding:1.2em;
+      align-items:center;
+
+  }

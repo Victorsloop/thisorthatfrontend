@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import { fetchPosts } from '../Redux/actions'
 import AddPost from '../Components/AddPost'
 import Post from '../Components/Post'
+import stylePost from '../Styling/stylePost.scss'
+
 
 class Wall extends Component {
 

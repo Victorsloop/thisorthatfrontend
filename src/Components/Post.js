@@ -2,6 +2,9 @@ import React, {Component} from 'react'
  import {connect} from 'react-redux'
  import {Link} from 'react-router-dom'
  import EditPost from './EditPost'
+ import stylePost from '../Styling/stylePost.scss'
+//  import 'stylePost.scss'
+
 
 
 class Post extends Component{
@@ -75,14 +78,14 @@ class Post extends Component{
             {this.props.user ? 
              <>
              {/* onClick={() => alert("Youre about to give some advice")} */}
-             <div class="postcard" >
+             <div class="postCard" >
              <Link to={`/feedback/${this.props.postObj.id}`} postID={this.state.postID}>
              {/* <Link to={`/feedback/:id`} postID={this.state.postID}> */}
             <img alt={this.props.user.username} style={{ maxWidth: "70vw", maxHeight: "20vh" }}src={this.props.postObj.img_url} ></img>
              </Link>
             <div class="postcardCON">
-            <h4>User:{this.props.username}</h4> 
-            <h4>Content:{this.props.postObj.content}</h4>
+            <h4>Creator: {this.props.username}</h4> 
+            <h4>Situation: {this.props.postObj.content}</h4>
             <button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit vent"}</button>
             {/* <button>DELETE</button> */}
             {/* <button onClick={this.postIdentification}>Help</button> */}

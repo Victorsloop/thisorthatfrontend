@@ -1,22 +1,22 @@
 
-import './App.css';
+import './App.scss';
 import React from 'react'
 import {Route} from 'react-router-dom'
-
 import Welcome from './Components/Welcome'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
 import Profile from './Components/Profile'
-import Header from './Components/Header'
-import Navbar from './Components/Navbar'
 import Wall from './Container/Wall';
-import MessengerContainer from './Container/MessengerContainer';
 import AllPost from './Container/AllPost'
 import Feedback from './Container/Feedback'
 import { loginUser, signupUser, returningUser} from './Redux/actions'
 import { connect } from 'react-redux'
 import EditPost from './Components/EditPost';
 import FinalHeader from './Components/FinalHeader';
+// import './Styling/WelcomeStyling.scss'
+
+// import PostStyling from './Styling/PostStyling'
+// import Navbar from './Components/Navbar'
 
 class App extends React.Component{
   state = {
@@ -101,19 +101,17 @@ class App extends React.Component{
     return(
       <div className={"parent"}>
         <div className="header-container">
-        <Header />
-      <div class="center">
+        {/* <Header /> */}
+      {/* <div class="center"> */}
         <FinalHeader logoutHandler={this.logoutHandler}/>
        {/* < Navbar logoutHandler={this.logoutHandler}/>     */}
-      </div>
+      {/* </div> */}
        
         </div>
 
         <div  className="post-container" >       
         <div class="postcont">
-        {/* POSTS */}
 
-        {/* < Route path='/' component={HomePage}/> */}
 
         
         
@@ -130,9 +128,6 @@ class App extends React.Component{
           < Route path="/feedback" render={() => <Feedback user={this.state.user} postID={this.state.postID} updatePostId={this.updatePostId}/>}/>
           < Route path="/signup" render={() => <Signup submitHandler={this.reduxSignupSubmitHandler}/>}/>
           < Route path="/login" render={() => <Login submitHandler={this.reduxSigninSubmitHandler} />}/>
-          {/* < Route path="/" render={() => <Welcome user={this.state.user}/>}/> */}
-
-          
           </>
 
         
@@ -142,21 +137,8 @@ class App extends React.Component{
         </div> 
         </div>   
 
-          <div  className="messenger-container">
-
-           
-            
-          <div> 
-            
-            <MessengerContainer/>
-
-          </div>
-           
-           
-            
-          </div>
           
-      {/* < Counter/> */}
+      
       
       
       </div>

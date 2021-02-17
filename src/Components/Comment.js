@@ -74,7 +74,7 @@ class Comment extends Component{
                 </div>
 
             <>
-            <h3>ADVICE FROM THE WORLD</h3>
+            <h3>ADVICE FROM THE WORLD{this.props.commentObj.post.content}</h3>
             <h4>User: {this.props.commentObj.user.username}</h4>
             <h4>Advie: {this.props.commentObj.comment}</h4>
             {this.props.commentObj.con ===true  ? "CON ⛔️" 

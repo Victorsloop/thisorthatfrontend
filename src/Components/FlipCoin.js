@@ -95,7 +95,7 @@ newSideHandler = (e) => {
     return(
       <div>
         <h2>Let's flip a coin</h2>
-        <h4>If youre here youve decided to leave your indecisiveness up to fate. Two choices with a 50/50 chance for either one.</h4>
+        <h4>If youre here youve decided to leave your indecisiveness up to fate. </h4>
 
          <div id="coin">
          <div class="side-a"></div>

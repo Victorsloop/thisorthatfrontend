@@ -56,7 +56,7 @@ import styled from 'styled-components'
                 <label for="Pro">PRO✅</label>
                 <input type="checkbox" name="Con"placeholder="Con" value={this.state.con} onClick={this.checkCon}/>
                 <label for="Con">CON ⛔️</label>
-                <Button class="Button">Help ➤ <div class="button__horizontal"></div><div class="button__vertical"></div></Button>
+                <Button class="Button" onClick ={this.localAddComment}>Help ➤ <div class="button__horizontal"></div><div class="button__vertical"></div></Button>
                 {/* <button onClick={this.checkProps}>CHECK</button> */}
                 
               

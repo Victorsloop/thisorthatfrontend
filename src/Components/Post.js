@@ -3,6 +3,8 @@ import React, {Component} from 'react'
  import {Link} from 'react-router-dom'
  import EditPost from './EditPost'
  import stylePost from '../Styling/stylePost.scss'
+import styled from "styled-components";
+ 
 //  import 'stylePost.scss'
 
 
@@ -40,7 +42,7 @@ class Post extends Component{
 
     deletePost = () => {
         if(this.state.editClicked === false && this.props.postObj){
-            return (<button onClick={this.deleteVent}>DELETE  🥲</button>)
+            return (<Button onClick={this.deleteVent}>Delete </Button>)
         }
         
     }
@@ -86,7 +88,7 @@ class Post extends Component{
             <div class="postcardCON">
             <h6>Creator: {this.props.username}</h6> 
             <h6>Situation: {this.props.postObj.content}</h6>
-            <button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit vent"}</button>
+            <Button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit "}</Button>
             {/* <button>DELETE</button> */}
             {/* <button onClick={this.postIdentification}>Help</button> */}
             {this.deletePost()}
@@ -116,3 +118,40 @@ const msp = (state) => {
 }
 
 export default connect(msp,null)(Post)
+const Button = styled.button`
+    margin-top: 20px;
+    background:  silver;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 300px;
+    font-weight: bolder;
+    font: inherit;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+   
+   
+    color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: black;
+    --color: white;
+    --hover: white;
+    :hover,:focus {
+        border-color: #93c9ff;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+`

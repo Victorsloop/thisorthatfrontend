@@ -52,7 +52,6 @@ export function editPost(postId, updatedPostObj, history) {
         })
             .then(response => response.json())
             .then(postData => {
-                // console.log('Success:', userData)
                 // history.push("/post")
             window.location.reload ()
             
@@ -82,7 +81,7 @@ export function loginUser(userObj) {
                 console.log("checkedUserObj:",checkedUserObj)
                 localStorage.setItem("token", checkedUserObj.jwt)
                 dispatch({type: LOGIN, payload: checkedUserObj.user})
-                
+
                 // console.log("checkedUserObj.posts:",checkedUserObj.user.posts)
                 // dispatch({type: ADD_POSTS, payload: checkedUserObj.user.posts})
             })
@@ -180,7 +179,6 @@ export function editComment(commentId, updatedCommentObj, history) {
                 // console.log('Success:', userData)
                 // history.push(`/feedback/${commentId}`)
             // window.location.reload ()
-
                 dispatch({ type: EDIT_COMMENTS, payload: commentData})
             })
             .catch((error) => {

@@ -1,5 +1,9 @@
 import React,{ Component } from 'react'
 import Coin from './Coin'
+import '../Styling/WelcomeStyling.scss'
+import styled from "styled-components";
+
+
  
 class FlipCoin extends Component{
   static defaultProps = {
@@ -22,7 +26,9 @@ class FlipCoin extends Component{
       // Track total number of flips
       currFace : null,
       totalFlips:0,
-      heads: 0
+      heads: 0,
+      this:"",
+      that:""
     }
      
     // Binding context of this keyword
@@ -51,13 +57,14 @@ class FlipCoin extends Component{
     })
   }
  
-  handleClick(){
+  handleClick=(e)=>{
+    e.preventDefault()
+    // this.setState({content:"", img_url:""})
     this.flipCoin()
   }
 
 
 //   jQuery(document).ready(function($){
-
 //     $('#coin').on('click', function(){
 //       var flipResult = Math.random();
 //       $('#coin').removeClass();
@@ -74,7 +81,11 @@ class FlipCoin extends Component{
 //     });
 //   });
 
-
+newSideHandler = (e) => {
+  e.preventDefault()
+  this.setState({[e.target.name]: e.target.value})
+  console.log(e.target.value)
+}
 
 
 
@@ -90,24 +101,30 @@ class FlipCoin extends Component{
          <div class="side-a"></div>
          <div class="side-b"></div>
         </div>
-{/* <           h1>Click on coin to flip</h1> */}
+        <form>
+        <input type="text" name="this"placeholder="Heads" value={this.state.content} onChange={this.newSideHandler}/>
+        <input type="text" name="that"placeholder="Tails" value={this.state.img_url} onChange={this.newSideHandler}/>
+        {/* <input type="hidden" name="Wall"placeholder="Wall" value={this.state.wall_id} onChange={this.state.wall_id}/> */}
+        {/* <button class="button"> SET! <div class="button__horizontal"></div><div class="button__vertical"></div></button> */}
+        <Button onClick={this.handleClick}>Flip Me!</Button>
+        </form>
 
          
         {/* If current face exist then show current face */}
         {currFace && <Coin info={currFace} />}
          
         {/* Button to flip the coin  */}
-        <button onClick={this.handleClick}>Flip Me!</button>
          
          
 <p>
-          Out of {totalFlips} flips, there have been {heads} heads 
-          and {totalFlips - heads} tails
+          Out of {totalFlips} flips, there have been {heads} heads in favor of {this.state.this} and {totalFlips - heads} tails in favor of {this.state.that}
         </p>
         {this.state.totalFlips?
         <>
+
     
         <p>Not happy with the outcome? That only means you know truly wanted the other side to land faceup</p>
+        
         <p>Flipping a coin is so simple and yet so obvious. Your reaction to the faceup coin will tell you that you what you really wanted.</p>
  
             </>
@@ -122,3 +139,40 @@ class FlipCoin extends Component{
 }
  
 export default FlipCoin
+const Button = styled.button`
+    margin-top: 20px;
+    background:  white;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 300px;
+    font-weight: bolder;
+    font: inherit;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+   
+   
+    color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: black;
+    --color: white;
+    --hover: white;
+    :hover,:focus {
+        border-color: #93c9ff;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+`

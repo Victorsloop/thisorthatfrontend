@@ -89,10 +89,10 @@ class Feedback extends Component {
             {localStorage.token ? 
             <>
             <div class=".div1FHeader">
-            <h1> WILL it be This or That ?!?!?!?</h1>
+            <h1> Will it be This or That ?!?!?!?</h1>
             <img alt="This or that" className="center" style={{ maxWidth: "40vw", maxHeight: "40vh" }}src={"https://i.gifer.com/LHDQ.gif"}></img>
-            <h4>The indecisive Situation {this.props.postObj.content}</h4>
-            <CommentForm userObj={this.props.userObj} postObj={this.props.postObj} postID={this.props.postID} rerender={this.renderComments} updatePostId={this.props.updatePostId}/>
+            {/* <h4>The indecisive Situation {this.props.postObj.content}</h4> */}
+            <CommentForm userObj={this.props.userObj} postObj={this.props.postObj} commentObj={this.props.commentObj} postID={this.props.postID} rerender={this.renderComments} updatePostId={this.props.updatePostId}/>
             {/* {this.checkuser()} */}
             
             {this.renderComments()}

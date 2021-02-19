@@ -13,7 +13,14 @@ import { loginUser, signupUser, returningUser} from './Redux/actions'
 import { connect } from 'react-redux'
 import EditPost from './Components/EditPost';
 import FinalHeader from './Components/FinalHeader';
-import FlipCoin from './Components/FlipCoin';
+// import styleFeedback from './Styling/styleFeedback.scss'
+import './Styling/WelcomeStyling.scss'
+import Inbox from './Components/Inbox';
+import FlipCoin from './Components/FlipCoin'
+import Header from './Components/Header'
+
+// import PostStyling from './Styling/PostStyling'
+// import Navbar from './Components/Navbar'
 
 class App extends React.Component{
   state = {
@@ -98,16 +105,13 @@ class App extends React.Component{
     return(
       <div className={"parent"}>
         <div className="header-container">
-        {/* <Header /> */}
-      {/* <div class="center"> */}
+          <Header/>
         <FinalHeader logoutHandler={this.logoutHandler}/>
-       {/* < Navbar logoutHandler={this.logoutHandler}/>     */}
-      {/* </div> */}
-       
+
         </div>
 
-        <div  className="post-container" >       
-        <div class="postcont">
+        {/* <div  className="post-container" >       
+        <div class="postcont"> */}
 
 
         
@@ -122,6 +126,7 @@ class App extends React.Component{
           < Route path="/allPost" render={() => <AllPost user={this.state.user} postID={this.state.postID}/>}/>
           < Route path="/editPost" render={() => <EditPost user={this.state.user}/>}/>
           < Route path="/profile" render={() => <Profile user={this.state.user} />}/>
+          < Route path="/inbox" render={() => <Inbox user={this.state.user} />}/>
           < Route path="/fate" render={() => <FlipCoin user={this.state.user} />}/>
           < Route path="/feedback" render={() => <Feedback user={this.state.user} postID={this.state.postID} updatePostId={this.updatePostId}/>}/>
           < Route path="/signup" render={() => <Signup submitHandler={this.reduxSignupSubmitHandler}/>}/>
@@ -132,8 +137,8 @@ class App extends React.Component{
         
         </>
 
-        </div> 
-        </div>   
+        {/* </div> 
+        </div>    */}
 
           
       

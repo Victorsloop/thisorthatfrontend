@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {connect} from 'react-redux'
 import { addComments } from "../Redux/actions";
 import styleFeedback from '../Styling/styleFeedback.scss'
+import styled from 'styled-components'
 
 
  class CommentForm extends Component {
@@ -45,6 +46,7 @@ import styleFeedback from '../Styling/styleFeedback.scss'
             <>
             <div class=".commentForm">
             <h2> Here to help! 🌎</h2>
+            {/* {this.props.commentObj.length} */}
             <form onSubmit={this.localAddComment}>
                 <input type="text" name="comment"placeholder="Advice" value={this.state.comment} onChange={this.newCommentHandler}/>
                 {/* <input type="text" name="name"placeholder={this.props.userObj.username} value={this.state.username} /> */}
@@ -54,7 +56,7 @@ import styleFeedback from '../Styling/styleFeedback.scss'
                 <label for="Pro">PRO✅</label>
                 <input type="checkbox" name="Con"placeholder="Con" value={this.state.con} onClick={this.checkCon}/>
                 <label for="Con">CON ⛔️</label>
-                <button class="button">Help ➤ <div class="button__horizontal"></div><div class="button__vertical"></div></button>
+                <Button class="Button">Help ➤ <div class="button__horizontal"></div><div class="button__vertical"></div></Button>
                 {/* <button onClick={this.checkProps}>CHECK</button> */}
                 
               
@@ -76,3 +78,41 @@ function mdp(dispatch){
     }
 }
   export default connect(msp,mdp)(CommentForm)
+
+  const Button = styled.button`
+    margin-top: 20px;
+    background:  white;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 100px;
+    font-weight: bolder;
+    font: inherit;
+    line-height: 1;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bolder;
+   
+   
+    color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: black;
+    --color: white;
+    --hover: white;
+    :hover,:focus {
+        border-color: #93c9ff;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+`

@@ -59,14 +59,14 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
-	// background: linear-gradient(-45deg, #ee7752, #e73c7e, #7acdeb, #587971);
-	// background: linear-gradient(-45deg, #292625, #8397a00e, #7acdeb, #4f288d);
+	flex-direction: row;
+	// background: linear-gradient(-45deg, #ee7752, #e73c7e, #7acdeb, #4e796e,blue);
+	background: linear-gradient(-45deg,rgba(192, 192, 192, 0.527),rgb(207, 189, 189), #292625, #8397a00e, #7acdeb,rgb(0, 89, 255),rgb(49, 77, 153),rgb(59, 59, 180), #4f288d);
     // background: linear-gradient(#a0abc0, #5e9be0);
 
 
 	// background-image: url("https://i.pinimg.com/originals/4e/30/c9/4e30c95dc885f880a2c2797fdee0e042.gif");
-	background-size: 100% 100%;
+	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 }
 
@@ -86,7 +86,7 @@ body {
 	}
 }
 
-// WelcomeImg
+// Welcome
 .welcomeImg{
 	align-items: center;
 	position: fixed; /* or absolute */
@@ -97,9 +97,11 @@ body {
 
 h1{
 	text-align: center;
+	
 }
 button{
 	background-color: silver;
+	opacity:inherit
 
 }
 

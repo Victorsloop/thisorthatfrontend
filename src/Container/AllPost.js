@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { fetchPosts } from '../Redux/actions'
 import AddPost from '../Components/AddPost'
 import Post from '../Components/Post'
+import styled from 'styled-components'
 
 class AllPost extends Component {
 
@@ -71,7 +72,7 @@ class AllPost extends Component {
                 <>
                 
                 {/* < FilterPost  /> */}
-                <button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Changed your mind?": "Ask The World"}</button>
+                <Button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Changed your mind?": "Ask The World"}</Button>
                 {/* {this.renderPosts()} */}
                  {this.renderPostForm()}
                 {this.newRenderPosts()}
@@ -120,6 +121,44 @@ function mdp(dispatch){
 
 
 export default connect(msp,mdp)(AllPost) 
+const Button = styled.button`
+    margin-top: 20px;
+    background:  silver;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 350px;
+    font-weight: bolder;
+    font: inherit;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+   
+   
+    color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: black;
+    --color: white;
+    --hover: white;
+    :hover,:focus {
+        border-color: #93c9ff;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+`
+
 
 
 

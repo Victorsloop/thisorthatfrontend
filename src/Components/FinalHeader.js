@@ -7,8 +7,9 @@ import { reduxLogout } from '../Redux/actions'
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
 // import '../App.css';
-// import './Stylesheet.css'
-// import './Navbar.css'
+import './Stylesheet.css'
+import './Navbar.css'
+import styled from 'styled-components'
 
 
 class FinalHeader extends Component{
@@ -46,6 +47,11 @@ class FinalHeader extends Component{
             icon: 'pi pi-fw pi-search-plus',
             command: () => { window.location.href = "/allPost" }
         },
+        {
+            label: 'Fate',
+            icon: 'pi pi-fw pi-heart',
+            command: () => { window.location.href = "/fate" }
+        }
 
     ]
 
@@ -62,8 +68,6 @@ class FinalHeader extends Component{
             <div>
             {this.props.userObj? 
              <>
-
-
                 <Menubar model={this.loggedInMenu} end={<Button label="Logout" onClick= {this.logout}/>}/>
                 {this.state.clicked === true? 
                 <Redirect to="/Welcome"/>
@@ -98,4 +102,5 @@ function mdp(dispatch){
     
 }
 export default connect(msp,mdp)(FinalHeader)
+
 

@@ -5,6 +5,7 @@ class Coin extends Component{
     return(
       <div class='Coin'>
         <img
+        alt = "COINS"
           style={{ width:'200px', height:'200px' }}
           src={this.props.info.imgSrc} 
         />

@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 //  import {Link,Redirect} from 'react-router-dom'
  import EditComment from './EditComment'
 import styleFeedback from '../Styling/styleFeedback.scss'
+import styled from 'styled-components'
 
 
 
@@ -33,7 +34,7 @@ class Comment extends Component{
 
     deleteComment = () => {
         if(this.state.editClicked === true){
-            return (<button onClick={this.deleteFeedback}>DELETE  🥲</button>)
+            return (<Button onClick={this.deleteFeedback}>Delete 🥲</Button>)
         }
         
     }
@@ -71,15 +72,16 @@ class Comment extends Component{
         return(
             <div class="commentArea div3FComments">
             <>
+                {/* {this.props.commentObj.length} */}
 
-            <h4>Predicament: {this.props.commentObj.post.content}</h4>
+            {/* <h4>Predicament: {this.props.commentObj.post.content}</h4> */}
             {/* <h4>User: {this.props.commentObj.user.username}</h4> */}
             <h4>Advice: {this.props.commentObj.comment}</h4>
-            {this.props.commentObj.con ===true  ? "CON ⛔️" 
-            : this.props.commentObj.pro ===true ? "PRO ✅" 
+            {this.props.commentObj.con ===true  ? "Con⛔️"
+            : this.props.commentObj.pro ===true ? "Pro✅"
             : "NeUtRuAl"}
             {this.deleteComment()}
-            <button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit "}</button>
+            <Button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit "}</Button>
             {this.editUserComment()}
             {/* {this.checkCOM()} */}
 
@@ -91,7 +93,7 @@ class Comment extends Component{
     }
 
 }
-
+{/* <Choice>PRO</Choice>  */}
 const msp = (state) => {
     // console.log("current state", state)
     return { user: state.user,feedbackArray:state.comments}
@@ -99,3 +101,50 @@ const msp = (state) => {
 }
 
 export default connect(msp,null)(Comment)
+const Button = styled.button`
+    margin-top: 10px;
+    background:  silver;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 80px;
+    font-weight: bolder;
+    font: inherit;
+    line-height: 1;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bolder;
+   
+   
+    color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: black;
+    --color: white;
+    --hover: white;
+    :hover,:focus {
+        border-color: #93c9ff;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+`
+const Choice = styled.h6`
+text-shadow: 0 0 5px #05c905b4, 0 0 10px #05c905b4, 0 0 15px #05c905b4, 0 0 20px #08d123, 0 0 20px #1fd108, 0 0 20px #08d144, 0 0 20px #29d108
+
+
+`
+
+
+const Boice = styled.button`
+
+`

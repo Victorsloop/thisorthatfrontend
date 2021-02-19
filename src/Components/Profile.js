@@ -58,6 +58,16 @@ class Profile extends Component{
         // }
     }
 
+    userFinder = () => {
+        if (this.props.location.aboutProps) {
+            return this.props.location.aboutProps.userObj
+        }
+        else {
+            return this.props.userObj
+
+        }
+    }
+
     render(){
         console.log("profile.js /this.props.userObj", this.props.userObj)
         return(

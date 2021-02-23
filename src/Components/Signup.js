@@ -13,8 +13,6 @@ class Signup extends React.Component{
         first_name:"",
         last_name:"",
         avatar:""
-        
-        // finished:null
     }
 
     inputHandler = (e) => {
@@ -48,7 +46,6 @@ class Signup extends React.Component{
                 <input type="text" name="hometown" placeholder="Hometown" value={this.state.hometown} onChange={this.inputHandler}/> 
                 <input type="number" name="age" placeholder="Age" value={this.state.age} onChange={this.inputHandler}/> 
                 <input type="number" name="avatar" placeholder="PIC" value={this.state.avatar} onChange={this.inputHandler}/> 
-                
                 <input type="submit" value="Sign Up"/>
                 </div>
             </form>

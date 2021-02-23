@@ -4,7 +4,6 @@ import React, {Component} from 'react'
 
 class Card extends Component{
     render(){
-        // console.log("this is the cards",this.props.cardObj)
         return(
             <>
             <h3>uSeR</h3>
@@ -15,9 +14,6 @@ class Card extends Component{
                <br></br>
                Online: 🟢
                </div>
-
-                
-
             </div>
             </>
         )
@@ -26,7 +22,6 @@ class Card extends Component{
 }
 
 const msp = (state) => {
-    // console.log("current state", state)
     return { user: state.user}
     
 }

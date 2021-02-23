@@ -19,19 +19,13 @@ class FlipCoin extends Component{
  
   constructor(props){
     super(props)
-     
-    // Responsible to render current updated coin face
     this.state = {
-       
-      // Track total number of flips
       currFace : null,
       totalFlips:0,
       heads: 0,
       this:"",
       that:""
     }
-     
-    // Binding context of this keyword
     this.handleClick = this.handleClick.bind(this)
   }
  
@@ -41,9 +35,7 @@ class FlipCoin extends Component{
     const randomIdx = Math.floor(Math.random() * arr.length)
     return arr[randomIdx]
   }
-   
-  // Function responsible to update the states
-  // according to users intractions
+
   flipCoin(){
     const newFace = this.choice(this.props.coins)
     this.setState(curState => {
@@ -59,27 +51,8 @@ class FlipCoin extends Component{
  
   handleClick=(e)=>{
     e.preventDefault()
-    // this.setState({content:"", img_url:""})
     this.flipCoin()
   }
-
-
-//   jQuery(document).ready(function($){
-//     $('#coin').on('click', function(){
-//       var flipResult = Math.random();
-//       $('#coin').removeClass();
-//       setTimeout(function(){
-//         if(flipResult <= 0.5){
-//           $('#coin').addClass('heads');
-//           console.log('it is head');
-//         }
-//         else{
-//           $('#coin').addClass('tails');
-//           console.log('it is tails');
-//         }
-//       }, 100);
-//     });
-//   });
 
 newSideHandler = (e) => {
   e.preventDefault()
@@ -104,8 +77,6 @@ newSideHandler = (e) => {
         <form>
         <input type="text" name="this"placeholder="Heads" value={this.state.content} onChange={this.newSideHandler}/>
         <input type="text" name="that"placeholder="Tails" value={this.state.img_url} onChange={this.newSideHandler}/>
-        {/* <input type="hidden" name="Wall"placeholder="Wall" value={this.state.wall_id} onChange={this.state.wall_id}/> */}
-        {/* <button class="button"> SET! <div class="button__horizontal"></div><div class="button__vertical"></div></button> */}
         <Button onClick={this.handleClick}>Flip Me!</Button>
         </form>
 
@@ -116,7 +87,7 @@ newSideHandler = (e) => {
         {/* Button to flip the coin  */}
          
          
-<p>
+        <p>
           Out of {totalFlips} flips, there have been {heads} heads in favor of {this.state.this} and {totalFlips - heads} tails in favor of {this.state.that}
         </p>
         {this.state.totalFlips?

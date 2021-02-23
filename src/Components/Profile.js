@@ -49,13 +49,6 @@ class Profile extends Component{
         
     }
     renderProfile = ()=> {
-
-        // if(this.props.userObj.friends ||this.props.userObj.user.friends ){
-        //     return <h5> How old is you: {this.props.userObj.age}</h5>
-        //         <h5> Where you from: {this.props.userObj.hometown}</h5>
-        // } else {
-        //     return <div>messed up</div>
-        // }
     }
 
     userFinder = () => {
@@ -135,13 +128,9 @@ class Profile extends Component{
             <div>
             </div>
             }
-            {/* {this.state.beenClicked? "Im perfect": "Edit Profiel"} */}
 
             {this.editUserProfile()}
             {this.deleteProfile()}
-
-            {/* <button>DELETE 🥲</button> */}
-
             </>
         )
     }

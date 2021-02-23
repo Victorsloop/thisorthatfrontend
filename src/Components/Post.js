@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
  import {connect} from 'react-redux'
  import {Link} from 'react-router-dom'
- import EditPost from './EditPost'
  import stylePost from '../Styling/stylePost.scss'
+ import EditPost from './EditPost'
 import styled from "styled-components";
- 
-//  import 'stylePost.scss'
-
 
 
 class Post extends Component{
@@ -18,12 +15,6 @@ class Post extends Component{
         postID :this.props.postID,
         changePAGE: false
     }
-
-    // updatePAGE= ()=>{
-    //     this.setState({changePAGE: !this.state.changePAGE})
-    //   }
-
-
     editClicked = () => {
         this.setState({editClicked: !this.state.editClicked})
         console.log("youre clicking it :D ",this.props.postObj.id)
@@ -55,42 +46,30 @@ class Post extends Component{
         .then(r => r.json())
         .then (data=> {
             console.log("new posts list in server",data,this.props)
-            // history.push("/post")
             this.setState({ deleteClicked: !this.state.deleteClicked })
             this.forceUpdate()
             window.location.reload ()
-            // component.forceUpdate(callback)
-            // this.props.rerender()
         })
         .catch(console.log)
         
 
     }    
 
-    // postIdentification = () => {
-    //     this.setState ({postID: this.props.postObj.id})
-    // }
     render(){
-
-        // console.log(this.state.postID)
         console.log("TESTING OUR STATE",this.props)
         return(
             <>
         
             {this.props.user ? 
              <>
-             {/* onClick={() => alert("Youre about to give some advice")} */}
              <div class="postCard" >
              <Link to={`/feedback/${this.props.postObj.id}`} postID={this.state.postID}>
-             {/* <Link to={`/feedback/:id`} postID={this.state.postID}> */}
             <img alt={this.props.user.username} style={{ maxWidth: "70vw", maxHeight: "20vh" }}src={this.props.postObj.img_url} ></img>
              </Link>
             <div class="postcardCON">
             <h6>Creator: {this.props.username}</h6> 
             <h6>Situation: {this.props.postObj.content}</h6>
             <Button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit "}</Button>
-            {/* <button>DELETE</button> */}
-            {/* <button onClick={this.postIdentification}>Help</button> */}
             {this.deletePost()}
 
             </div>

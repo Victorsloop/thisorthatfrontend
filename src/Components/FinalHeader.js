@@ -6,11 +6,7 @@ import {Button} from 'primereact/button'
 import { reduxLogout } from '../Redux/actions'
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
-// import '../App.css';
 import './Stylesheet.css'
-import './Navbar.css'
-import styled from 'styled-components'
-
 
 class FinalHeader extends Component{
 

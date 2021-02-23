@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-// import FilterPost from '../Components/FilterPost'
 import {connect} from 'react-redux'
 import { fetchPosts } from '../Redux/actions'
 import AddPost from '../Components/AddPost'
 import Post from '../Components/Post'
-import stylePost from '../Styling/stylePost.scss'
 import styled from 'styled-components'
 
 
@@ -22,18 +20,14 @@ class Wall extends Component {
         fetch("http://localhost:5000/api/v1/posts")
         .then(r => r.json())
         .then (arrayOfPost => {
-            
             const filteredPosts = []
             arrayOfPost.forEach( post=>{
                 if(post.user.id === this.props.user.id){
-                    filteredPosts.push(post)
+                filteredPosts.push(post)
                 }
             })    
-            // this.setState({newPostArray:filteredPost})
-            // dispatch({type: FETCH_POSTS, payload : filteredPosts})
             console.log("IN WALL DIDMOUNT SHOWING filteredPosts",filteredPosts)
             this.props.getPosts(filteredPosts)
-            
         })
         .catch(console.log)
     }
@@ -51,67 +45,39 @@ class Wall extends Component {
 
     
     newRenderPosts = () => {
-        // console.log("newrenderpost this.props.user", this.props.user)
         console.log("FILTERED POST ARRAY", this.props.postArray)
         return this.props.postArray.map(post => <Post className="post-css" key={post.id} postObj={post} username={post.user.username} rerender={this.newRenderPosts} updatePage={this.updatePage}/>)
-        
-        
-
     }
 
 
     render() {
         console.log("wall.js props",this.props)
         return (
-
-
             <>
                 { localStorage.token ?
-
                 <>
-                
-                {/* < FilterPost  /> */}
                 <Button class="addpostbutton" onClick={this.postClickHandler}>{this.state.beenClicked? "Never Mind": "Ask The World"}</Button>
                  {this.renderPostForm()}
                 {this.newRenderPosts()}
-                
-                {/* {this.renderPosts()} */}
-                
                 </>
-                
                 :
-
                 <>
              <h1>Goodbye, We hope you were able to choose between This or That </h1>
-
                 </>        
                 }
             </>
-            
-            // <>
-            
-            // {this.props.user.posts.forEach(post => { <Post content={post.content } /> } )}
-            // </>
-
         )
     }
 }
 
 function msp(state){
-
     console.log("current state in msp in wall.js", state.user)
-    // console.log("WHEREPOST CAME FROM",state.posts.user.id)
     return { user: state.user, postArray: state.posts}
-    // return { user: state.user, postArray: state.user.posts}
-    
-
-
 }
 
 function mdp(dispatch){
     return{
         getPosts: (filteredPosts) => dispatch(fetchPosts(filteredPosts))
-
     
     }
     

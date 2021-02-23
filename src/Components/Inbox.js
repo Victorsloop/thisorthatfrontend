@@ -11,28 +11,6 @@ class Inbox extends Component {
         this.talkjsContainer = React.createRef();
     }
 
-    // componentDidMount() {
-    //     const user = this.props.user;
-    //     Talk.ready.then(() => {
-    //         var me = new Talk.User({
-    //             id: user.id,
-    //             name: user.name,
-    //             email: user.email,
-    //             photoUrl: user.avatar,
-    //             welcomeMessage: "Hey there! How are you? :-)"
-    //         });
-
-    //         window.talkSession = new Talk.Session({
-    //             appId: process.env.REACT_APP_API_KEY,
-    //             me: me
-    //         });
-
-    //         this.inbox = window.talkSession.createInbox();
-    //         this.inbox.mount(this.container);
-    //     })
-
-    // }
-
 
        componentDidMount() {
         Talk.ready.then(() => {
@@ -55,12 +33,10 @@ class Inbox extends Component {
     }
 
     render() {
-        // console.log( "checking this.props.user in",this.props.user.id)
         return (
             <Wrapper>
                 <Title> YOUR INBOX </Title>
                 <div style={{ height: '600px' }} className="inbox-container" ref={c => this.container = c}>Loading...</div>
-                {/* <div ref={this.talkjsContainer} className="chatbox-container"></div> */}
             </Wrapper>
         )
     }
@@ -93,65 +69,3 @@ function msp(state) {
     })
 }
 export default connect(msp)(Inbox)
-
-// import React from 'react'
-// import {NavLink} from 'react-router-dom'
-// import {connect} from 'react-redux'
-// class Header extends React.Component {
-//     render(){
-//         return(
-//             <>
-//             {this.props.user?(
-//                  <div>
-//                  <NavLink to="/Home">
-//                  <h4>Home</h4>
-//                  </NavLink>
-//                  <NavLink to="/allVents">
-//                  <h4>All Vents</h4>
-//                  </NavLink>
-//                  <NavLink to="/createVent">
-//                  <h4>Create a Vent</h4>
-//                  </NavLink>
-//                  <NavLink to="/Profile">
-//                  <h4>Profile</h4>
-//                  </NavLink>
-//                  <NavLink to="/Logout">
-//                  <h4>Logout</h4>
-//                  </NavLink>
-//              </div>
-
-
-//             ):
-            
-            
-            
-//             <div>
-//                 <NavLink to="/Home">
-//                 <h4>Home</h4>
-//                 </NavLink>
-//                 <NavLink to="/About">
-//                 <h4>About</h4>
-//                 </NavLink>
-//                 {/* <NavLink to="/createVent">
-//                 <h4>Create a Vent</h4>
-//                 </NavLink>
-//                 <NavLink to="/Profile">
-//                 <h4>Profile</h4>
-//                 </NavLink>
-//                 <NavLink to="/Logout">
-//                 <h4>Logout</h4>
-//                 </NavLink> */}
-//             </div>
-//             }
-//             </>
-//         )
-//     }
-// }
-
-// function msp(state) {
-//     return ({
-//         user: state.user
-//     })
-// }
-
-// export default connect(msp,null)(Header)

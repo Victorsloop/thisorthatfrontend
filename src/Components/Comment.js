@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
- import {connect} from 'react-redux'
-//  import {Link,Redirect} from 'react-router-dom'
- import EditComment from './EditComment'
-import styleFeedback from '../Styling/styleFeedback.scss'
+import {connect} from 'react-redux'
+import EditComment from './EditComment'
 import styled from 'styled-components'
+// import styleFeedback from '../Styling/styleFeedback.scss'
 
 
 
@@ -27,10 +26,6 @@ class Comment extends Component{
         }
         
     }
-    // deleteClicked = () => {
-    //     this.setState({deleteClicked: !this.state.editClicked})
-    //     console.log("youre clicking it DELETE:D ")
-    // }
 
     deleteComment = () => {
         if(this.state.editClicked === true){
@@ -47,22 +42,9 @@ class Comment extends Component{
         .then(r => r.json())
         .then (data=> {
             console.log("new posts list in server",data)
-            // history.push("/post")
             this.setState({ deleteClicked: !this.state.deleteClicked })
-            // this.forceUpdate()
-            // window.location.reload ()
         })
         .catch(console.log)
-
-    }
-
-
-    checkCOM=()=>{
-        console.log("Checking commentobj",this.props.commentObj)
-        // console.log("Checking comment",this.props.feedbackArray)
-        console.log("feedbackarray",this.props.feedbackArray)
-
-        // console.log("CHECKING CONTENT",this.props.content)
 
     }
     
@@ -72,10 +54,6 @@ class Comment extends Component{
         return(
             <div class="commentArea div3FComments">
             <>
-                {/* {this.props.commentObj.length} */}
-
-            {/* <h4>Predicament: {this.props.commentObj.post.content}</h4> */}
-            {/* <h4>User: {this.props.commentObj.user.username}</h4> */}
             <h4>Advice: {this.props.commentObj.comment}</h4>
             {this.props.commentObj.con ===true  ? "Con⛔️"
             : this.props.commentObj.pro ===true ? "Pro✅"
@@ -83,19 +61,14 @@ class Comment extends Component{
             {this.deleteComment()}
             <Button onClick={this.editClicked} >{this.state.editClicked? "Its perfect": "Edit "}</Button>
             {this.editUserComment()}
-            {/* {this.checkCOM()} */}
-
             </> 
-
             </div>
-
         )
     }
-
 }
-{/* <Choice>PRO</Choice>  */}
+
+
 const msp = (state) => {
-    // console.log("current state", state)
     return { user: state.user,feedbackArray:state.comments}
     
 }
@@ -138,13 +111,13 @@ const Button = styled.button`
         }
     }
 `
-const Choice = styled.h6`
-text-shadow: 0 0 5px #05c905b4, 0 0 10px #05c905b4, 0 0 15px #05c905b4, 0 0 20px #08d123, 0 0 20px #1fd108, 0 0 20px #08d144, 0 0 20px #29d108
+// const Choice = styled.h6`
+// text-shadow: 0 0 5px #05c905b4, 0 0 10px #05c905b4, 0 0 15px #05c905b4, 0 0 20px #08d123, 0 0 20px #1fd108, 0 0 20px #08d144, 0 0 20px #29d108
 
 
-`
+// `
 
 
-const Boice = styled.button`
+// const Boice = styled.button`
 
-`
+// `

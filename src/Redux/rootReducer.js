@@ -6,8 +6,8 @@ const defaultState = {
     counter:0,
     comments:[],
     postID:1
-    // api: [],
 }
+
 
 function userReducer(prevState= defaultState.user, action){
     switch(action.type){
@@ -27,11 +27,6 @@ function userReducer(prevState= defaultState.user, action){
             return [...prevState, action.payload]
         case "UPDATE_USER":
             return [...prevState, action.payload]     
-        // case "ADD_USER_POSTS":
-        //     return {  posts: [prevState.posts,action.payload]}
-            // return [{ user: prevState.user, posts: ...prevState.posts, action.payload }]
-
-
         default:
 
             return prevState
@@ -49,7 +44,6 @@ function postsReducer(prevState = defaultState.posts, action){
                 return [...prevState, action.payload]
             case "EDIT_POSTS":
                     console.log("IN POST REDUCER EDITING", action)
-                    // return prevState
                     return action.payload
             case "DELETE_POSTS":
                     console.log("IN POST REDUCER Deleting", action)
@@ -69,11 +63,8 @@ function commentReducer(prevState= defaultState.comments, action){
             case "ADD_COMMENTS":
                 console.log("IN Comment REDUCER Adding",[...prevState, action.payload])
                 return [...prevState, action.payload]
-                // return [action.payload, ...prevState]
-
             case "EDIT_COMMENTS":
                     console.log("IN Comment REDUCER EDITING", action)
-                    // return prevState
                     return [...prevState, action.payload]
             case "DELETE_COMMENTS":
                     console.log("IN Comment REDUCER Deleting", action)
@@ -85,15 +76,11 @@ function commentReducer(prevState= defaultState.comments, action){
     }
 }
 
-//pure functions
-
-
+//Pure functions
 const rootReducer =  combineReducers({
     user: userReducer,
     posts: postsReducer,
     comments: commentReducer
-    
-    // api: apiReducer
 })
 
 export default rootReducer 

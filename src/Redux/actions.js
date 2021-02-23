@@ -52,11 +52,8 @@ export function editPost(postId, updatedPostObj, history) {
         })
             .then(response => response.json())
             .then(postData => {
-                // history.push("/post")
             window.location.reload ()
-            
 
-                // dispatch({ type: actionTypes.editAccount, payload: userData})
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -93,7 +90,6 @@ export function signupUser(userObj) {
 
 
     return function (dispatch, getState) {
-        // console.log("userobj in signup",userObj)
         fetch('http://localhost:5000/api/v1/users', {
             method: "POST",
             headers: {
@@ -133,8 +129,6 @@ export function signupUser(userObj) {
 
 export function returningUser(userObj) {
     return {type: GET_USER, payload: userObj.user}
-    
-    
 }
 
 export function reduxLogout(){
@@ -175,11 +169,8 @@ export function editComment(commentId, updatedCommentObj, history) {
         })
             .then(response => response.json())
             .then(commentData => {
-
-                // console.log('Success:', userData)
-                // history.push(`/feedback/${commentId}`)
-            // window.location.reload ()
-                dispatch({ type: EDIT_COMMENTS, payload: commentData})
+            window.location.reload ()
+            dispatch({ type: EDIT_COMMENTS, payload: commentData})
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -198,13 +189,7 @@ export function editingPost(postId,postObj) {
         })
             .then(response => response.json())
             .then(newPostObj => {
-
-
-                // console.log('Success:', userData)
-                // history.push("/post")
             window.location.reload ()
-            
-
                 dispatch({ type: EDIT_POST, payload: newPostObj})
             })
             .catch((error) => {
@@ -212,27 +197,3 @@ export function editingPost(postId,postObj) {
             });
     }
 }
-
-// export function editArticle(articleObj){
-//     return function(dispatch){
-//         // console.log("in redux edit",articleObj )
-                    
-//                 fetch(`http://localhost:3001/articles/${articleObj.id}`,{
-//                     method:"PATCH",
-//                     headers:{
-//                         "Content-Type": "application/json",
-//                         "Accepts": "application/json"
-//                     },
-//                     body:JSON.stringify(articleObj)
-//                 })
-//                 .then(r => r.json())
-//                 .then (newArticleObj => {
-//                     console.log("edited user in backend",newArticleObj)
-//                     dispatch({type: EDIT_ARTICLE, payload: newArticleObj})
-        
-//                 })
-//                 .catch(console.log)
-                
-//     }
-// }
-

@@ -60,13 +60,10 @@ class EditUser extends React.Component {
                 <input type="text" name="avatar"placeholder={this.props.user.avatar} value={this.state.avatar} onChange={this.userFormHandler}/>
                 
                 <button class="editbutton">Correct!</button>
-                {/* <button>DELETE 🥲</button> */}
                 </form>
                 </>
                 )
-                
             }
-    
 }
 
 function msp(state){
@@ -74,15 +71,12 @@ function msp(state){
     return{
         userObj: state.user
     }
-
 }
 
 function mdp(dispatch){
     return{
         returningUser: (userObj) => dispatch(returningUser(userObj))
-    
     }
-    
 }
 
 export default connect(msp, mdp) (EditUser)

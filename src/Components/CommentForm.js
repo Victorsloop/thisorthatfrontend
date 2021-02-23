@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
 import { addComments } from "../Redux/actions";
-import styleFeedback from '../Styling/styleFeedback.scss'
+// import styleFeedback from '../Styling/styleFeedback.scss'
 import styled from 'styled-components'
 
 
@@ -41,7 +41,6 @@ import styled from 'styled-components'
 
 
     render(){
-        // console.log("current props in addPost component",this.props.userObj)
         return(
             <>
             <div class=".commentForm">
@@ -57,10 +56,6 @@ import styled from 'styled-components'
                 <input type="checkbox" name="Con"placeholder="Con" value={this.state.con} onClick={this.checkCon}/>
                 <label for="Con">CON ⛔️</label>
                 <Button class="Button" onClick ={this.localAddComment}>Help ➤ <div class="button__horizontal"></div><div class="button__vertical"></div></Button>
-                {/* <button onClick={this.checkProps}>CHECK</button> */}
-                
-              
-            
             </form>
             </div>
             </>

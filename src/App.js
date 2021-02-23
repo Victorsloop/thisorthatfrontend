@@ -1,5 +1,3 @@
-
-import './App.scss';
 import React from 'react'
 import {Route} from 'react-router-dom'
 import Welcome from './Components/Welcome'
@@ -13,14 +11,10 @@ import { loginUser, signupUser, returningUser} from './Redux/actions'
 import { connect } from 'react-redux'
 import EditPost from './Components/EditPost';
 import FinalHeader from './Components/FinalHeader';
-// import styleFeedback from './Styling/styleFeedback.scss'
 import './Styling/WelcomeStyling.scss'
 import Inbox from './Components/Inbox';
 import FlipCoin from './Components/FlipCoin'
 import Header from './Components/Header'
-
-// import PostStyling from './Styling/PostStyling'
-// import Navbar from './Components/Navbar'
 
 class App extends React.Component{
   state = {
@@ -69,11 +63,8 @@ class App extends React.Component{
         .then(returningUser => {
           console.log("returning user", returningUser)
           this.props.returning(returningUser)
-          
-        })
-      
+        }) 
     }
-
   }
 
   updatePostId= ()=>{
@@ -103,25 +94,12 @@ class App extends React.Component{
 
   render(){
     return(
-      <div className={"parent"}>
-        <div className="header-container">
-          <Header/>
+      <div >
+        <div >
+        <Header/>
         <FinalHeader logoutHandler={this.logoutHandler}/>
-
         </div>
-
-        {/* <div  className="post-container" >       
-        <div class="postcont"> */}
-
-
-        
-        
-        < Route path="/welcome" render={() => <Welcome/>}/>
-
-
-        <>
-        
-          <>
+          < Route path="/welcome" render={() => <Welcome/>}/>
           < Route path="/post" render={() => <Wall user={this.state.user} postID={this.state.postID} updatePAGE={this.updatePAGE}/>}/>
           < Route path="/allPost" render={() => <AllPost user={this.state.user} postID={this.state.postID}/>}/>
           < Route path="/editPost" render={() => <EditPost user={this.state.user}/>}/>
@@ -131,28 +109,12 @@ class App extends React.Component{
           < Route path="/feedback" render={() => <Feedback user={this.state.user} postID={this.state.postID} updatePostId={this.updatePostId}/>}/>
           < Route path="/signup" render={() => <Signup submitHandler={this.reduxSignupSubmitHandler}/>}/>
           < Route path="/login" render={() => <Login submitHandler={this.reduxSigninSubmitHandler} />}/>
-          </>
-
-        
-        
-        </>
-
-        {/* </div> 
-        </div>    */}
-
-          
-      
-      
-      
-      </div>
+       </div>
       
     )
   }
 }
 
-function msp(state){
-  // return {current_wall: state.user.wall}
-}
 
 function mdp(dispatch){
   return {
@@ -163,4 +125,4 @@ function mdp(dispatch){
 }
 
 
-export default connect(msp, mdp)(App);
+export default connect(null, mdp)(App);

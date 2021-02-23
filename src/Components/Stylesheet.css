@@ -4,7 +4,6 @@ body {
     padding:0;
     font-family: sans-serif;
     flex:row;
-    /* background: linear-gradient(#a0abc0, #5e9be0); */
   }
   
   .login-box {
@@ -217,11 +216,6 @@ body {
     color: grey;
     background-image: url("https://media3.giphy.com/media/3ohhwzIw3bISRhQWME/giphy.gif");
   text-shadow: 0 0 5px #f4f5f4, 0 0 10px #d1d1d1, 0 0 15px #ecf0ecf8, 0 0 20px #d5e2d7, 0 0 20px #d4d6d3, 0 0 20px #212221, 0 0 20px #e9f3e7
-
-    /* font-size: 20px; */
-    /* font-family: times, Times New Roman, times-roman, georgia, serif; */
-    /* background-position: center */
-    /* background-color: black; */
     
   }
   .media{
@@ -245,7 +239,6 @@ body {
   .profilebutton:hover, a:hover {
     opacity: 0.7;
   }
-  /* edit buttoncsss */
   .editbutton {
     border: none;
     outline: 0;
@@ -261,7 +254,6 @@ body {
   .editbutton:hover, a:hover {
     opacity: 0.7;
   }
-/* addpostbutton css */
 .addpostbutton {
     border: none;
     outline: 0;
@@ -269,7 +261,6 @@ body {
     padding: 8px;
     color: white;
     background-color: grey;
-    /* background-color: blue; */
     text-align: center;
     cursor: pointer;
     width: 100px;
@@ -284,7 +275,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  /* text-shadow: 0 0 5px #05c905b4, 0 0 10px #05c905b4, 0 0 15px #05c905b4, 0 0 20px #08d123, 0 0 20px #1fd108, 0 0 20px #08d144, 0 0 20px #29d108 */
 }
 .Coin{
   display: block;
